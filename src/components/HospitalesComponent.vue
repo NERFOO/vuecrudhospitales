@@ -25,7 +25,7 @@
                     <td>
                         <router-link :to="`/detalles/${hosp.idHospital}`" class="btn btn-success">Detalles</router-link>
                         <router-link :to="`/updateHospital/${hosp.idHospital}`" class="btn btn-info">Modificar</router-link>
-                        <router-link to="/deleteHospital" class="btn btn-danger">Eliminar</router-link>
+                        <router-link :to="`/deleteHospital/${hosp.idHospital}`" class="btn btn-danger">Eliminar</router-link>
                     </td>
                 </tr>
             </tbody>

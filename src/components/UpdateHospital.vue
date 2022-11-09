@@ -2,7 +2,7 @@
     <div>
         <h1>Update Hospital</h1>
 
-        <form method="POST" v-on:submit.prevent="updateHospital()">
+        <form method="POST" v-on:submit.prevent="updateHospital()" v-if="hospital">
             <label>Nombre</label>
             <input type="text" class="form-control" v-model="hospital.nombre" />
             <label>Direccion</label>
@@ -12,7 +12,7 @@
             <label>Camas</label>
             <input type="number" class="form-control" v-model="hospital.camas" />
             <br />
-            <button class="btn btn-info">Crear hospital</button>
+            <button class="btn btn-info">Modificar hospital</button>
         </form>
     </div>
 </template>
@@ -38,6 +38,10 @@ export default {
     },
     mounted() {
         this.id = this.$route.params.id;
+
+        service.getHospitalesId(this.id).then( res => {
+            this.hospital = res;
+        })
     }
 }
 </script>

@@ -45,4 +45,15 @@ export default class ServicesHospitales {
             })
         })
     }
+
+    deleteHospitales(id) {
+        return new Promise(function (resolve) {
+            var request = "/api/Hospitales/" + id;
+            var url = Global.urlHospitales + request;
+
+            axios.delete(url).then( res => {
+                resolve(res.data);
+            })
+        })
+    }
 }

@@ -3,6 +3,8 @@ import HomeComponent from './components/HomeComponent';
 import HospitalesComponent from './components/HospitalesComponent';
 import CreateHospital from './components/CreateHospital';
 import DetallesHospitales from './components/DetallesHospitales';
+import UpdateHospital from './components/UpdateHospital';
+import DeleteHospital from './components/DeleteHospital';
 
 const routes = [
     {
@@ -18,10 +20,10 @@ const routes = [
         path : "/newHospital", component : CreateHospital
     },
     {
-        path : "/updateHospital", component : CreateHospital
+        path : "/updateHospital/:id", component : UpdateHospital
     },
     {
-        path : "/deleteHospital", component : CreateHospital
+        path : "/deleteHospital/:id", component : DeleteHospital
     }
 ]
 
